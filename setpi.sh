@@ -1,8 +1,8 @@
 #!bin/bash
 #upadte
-
 echo "UPDATING *******************************************************************"
 sudo apt-get update && sudo apt-get upgrade
+
 echo -en "\007"
 echo -en "\007"
 echo -en "\007"
@@ -52,19 +52,15 @@ echo -en "\007"
 echo " Testing WeeWx **************************************************************************"
 #Start
 sudo /etc/init.d/weewx start
-
-
 #Stop
 sudo /etc/init.d/weewx stop
-
-
 echo " ************************************DONE***************************************************"
 
 # Resources used
 # 1: https://github.com/weewx/weewx/wiki/Raspberry-Pi
 # 2: https://github.com/weewx/weewx/wiki/
 # 3: http://www.weewx.com/docs/debian.htm
-
+# 4 https://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS
 
 
 #Things Still need to set up and install a light weight websever
