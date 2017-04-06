@@ -11,26 +11,20 @@ echo "Starting Dependency Install **********************************************
 #dependencies
 
 # required packages:
-sudo apt-get install python-configobj
-sudo apt-get install python-cheetah
-sudo apt-get install python-imaging
+sudo apt-get install python-configobj python-imaging python-cheetah
 
 # required if hardware is serial or USB:
-sudo apt-get install python-serial
-sudo apt-get install python-usb
+sudo apt-get install python-serial python-usb
 
 # required if using MySQL:
-sudo apt-get install mysql-client
-sudo apt-get install python-mysqldb
+sudo apt-get install mysql-client python-mysqldb
 
 # required if using FTP on Raspbian systems:
 sudo apt-get install ftp
 
 # optional for extended almanac information:
-sudo apt-get install python-dev
-sudo apt-get install python-pip
+sudo apt-get install python-dev python-pip ngnix
 sudo pip install pyephem
-sudo apt-get install ftp
 
 echo -en "\007"
 echo -en "\007"
@@ -55,16 +49,3 @@ sudo /etc/init.d/weewx start
 #Stop
 sudo /etc/init.d/weewx stop
 echo " ************************************DONE***************************************************"
-
-# Resources used
-# 1: https://github.com/weewx/weewx/wiki/Raspberry-Pi
-# 2: https://github.com/weewx/weewx/wiki/
-# 3: http://www.weewx.com/docs/debian.htm
-# 4 https://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS
-
-
-#Things Still need to set up and install a light weight websever
-#ngix or lighttpd
-
-#then need to adjest and configre the RTC issue with Raspi Pi
-# see -> https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie
