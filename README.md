@@ -2,7 +2,7 @@
 Short script to intialize and setup a raspberry pi to use the weewx weather station library.
 Will setup a raspberry pi after a fress install of ubuntu or a debian based ISO ie: raspbian.
 
-##Use
+## Use
 ``` 
 $ git clone https://github.com/JosephMeli/weewx-Setup-RaspberyPi.git \
   cd weewx-Setup-RaspberryPi \
@@ -11,7 +11,7 @@ $ git clone https://github.com/JosephMeli/weewx-Setup-RaspberyPi.git \
 ```
 Please note this is a rasperryPi and it will take a very long time because of the computing power they have compared to a normal computer.
 
-###Next
+### Next
 Need to setup Ngnix to host the the html page for the weewx dashboard
 
 look to edit ```/etc/ngnix/site-available/default ``` then add the following to file in the spot for location:
@@ -49,19 +49,26 @@ server {
 	              try_files $uri $uri/ =404;
 	}
 
+
 ```
+The weewx html files are held in ```/var/www/html/weewx/ ```
+
+## Final step
+Run: 
+```
+$ sudo /etc/init.d/weewx start && sudo /etc/init.d/ngnix start \
+  weewxd /etc/weewx/weewx.conf
+```
+NOTE: This tutorial is asuming you can communicate over serial with your weather station 
 
 
 
 #### Resources used
-* 1: https://github.com/weewx/weewx/wiki/Raspberry-Pi
-* 2: https://github.com/weewx/weewx/wiki/
-* 3: http://www.weewx.com/docs/debian.htm
-* 4 https://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS
+* https://github.com/weewx/weewx/wiki/Raspberry-Pi
+* https://github.com/weewx/weewx/wiki/
+* http://www.weewx.com/docs/debian.htm
+* https://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS
+* https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie
 
+If it matters to fix the ** fake clock ** see the last link in Resources used
 
-#Things Still need to set up and install a light weight websever
-#ngix or lighttpd
-
-#then need to adjest and configre the RTC issue with Raspi Pi
-# see -> https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie
