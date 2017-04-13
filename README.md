@@ -72,3 +72,15 @@ NOTE: This tutorial is asuming you can communicate over serial with your weather
 
 If it matters to fix the ** fake clock ** see the last link in Resources used
 
+
+** For NERVE USE only  ** 
+* connect the correct wave relay to each device
+* set Joe's laptop ip to 10.3.1.10
+* ssh to pi using config on Joe's laptop
+* then run ./quickstart.sh 
+* go to 10.4.1.104/weewx 
+* will refresh every 60 seconds
+
+** Debug steps  ** 
+plug in pi to monitor double check ip for eth0
+
